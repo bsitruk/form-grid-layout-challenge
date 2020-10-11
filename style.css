@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #e5e5e5;
+  font-size: 1.6rem;
+  color: #374151;
+  margin: 8px;
+}
+
+h1 {
+  margin: 0;
+  font-size: inherit;
+}
+
+input {
+  font: inherit;
+  color: inherit;
+}
+
+textarea {
+  resize: none;
+  font: inherit;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  flex: 1;
+  max-width: 1028px;
+  background-color: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 32px 44px;
+}
+
+.title {
+  font-size: 2.4rem;
+  border-bottom: 1px #d7dbdf solid;
+  padding-bottom: 1.1rem;
+  margin-bottom: 3.1rem;
+}
+
+.input-component {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-component > label {
+  margin-bottom: 0.8rem;
+}
+
+.input-component > .input {
+  flex: 1;
+  flex-basis: 4.9rem;
+  border: 1px #d2d6db solid;
+  border-radius: 6px;
+}
+
+.input-component.input__big {
+  grid-row-end: span 2;
+}
+
+.input-component > input {
+  max-height: 4.9rem;
+}
+
+.checkbox-component {
+  display: flex;
+}
+
+.checkbox-component input {
+  display: none;
+}
+
+.checkbox-label {
+  user-select: none;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.checkmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  height: 1.6rem;
+  width: 1.6rem;
+  border: 1px #d2d6db solid;
+  border-radius: 50%;
+}
+
+.checkbox-component:hover .checkmark {
+  background-color: #eeeeee;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  height: 0.4rem;
+  width: 0.4rem;
+  background-color: #5850eb;
+  border-radius: 50%;
+}
+
+input:checked + .checkmark:after {
+  display: block;
+}
+
+.inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  grid-gap: 2.4rem;
+  margin-bottom: 2.5rem;
+}
+
+.consents {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2.4rem;
+  gap: 1rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  background-color: #5850eb;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 1.5rem 2.6rem;
+  font-weight: 500;
+  border-radius: 0.6rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .inputs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .input-component.input__big {
+    grid-column: 1 / -1;
+  }
+
+  .consents {
+    flex-direction: column;
+  }
+
+  .btn {
+    flex: 1;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .inputs {
+    grid-template-columns: 1fr;
+  }
+}
